@@ -1,53 +1,64 @@
-const provinces = [
-"Abra",
-"Agusan del Norte",
-"Agusan del Sur",
-"Aklan",
-"Albay",
-"Antique",
-"Apayao",
-"Aurora"
-];
+const provinceSearch = document.getElementById("provinceSearch");
+const provinceList = document.getElementById("provinceList");
 
-const input=document.getElementById("provinceSearch");
-const list=document.getElementById("provinceList");
+let provinces = [];
 
-function display(data){
+// Load provinces from JSON
+fetch("data/provinces.json")
+.then(response => response.json())
+.then(data => {
 
-list.innerHTML="";
+    provinces = data;
 
-data.forEach(province=>{
+    displayProvinces(provinces);
 
-const div=document.createElement("div");
+})
+.catch(error => {
 
-div.className="province-item";
+    provinceList.innerHTML = `
+        <div class="province-item">
+            Failed to load province data.
+        </div>
+    `;
 
-div.innerHTML=province;
-
-div.onclick=()=>{
-
-alert(province);
-
-};
-
-list.appendChild(div);
+    console.error(error);
 
 });
 
+function displayProvinces(list){
+
+    provinceList.innerHTML = "";
+
+    list.forEach(item=>{
+
+        const div = document.createElement("div");
+
+        div.className = "province-item";
+
+        div.textContent = item.name;
+
+        div.onclick = ()=>{
+
+            alert("Selected Province: " + item.name);
+
+        };
+
+        provinceList.appendChild(div);
+
+    });
+
 }
 
-display(provinces);
+provinceSearch.addEventListener("input", ()=>{
 
-input.addEventListener("keyup",()=>{
+    const keyword = provinceSearch.value.toLowerCase();
 
-const search=input.value.toLowerCase();
+    const filtered = provinces.filter(item =>
 
-const filtered=provinces.filter(p=>
+        item.name.toLowerCase().includes(keyword)
 
-p.toLowerCase().includes(search)
+    );
 
-);
-
-display(filtered);
+    displayProvinces(filtered);
 
 });
