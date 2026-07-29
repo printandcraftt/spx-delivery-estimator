@@ -26,7 +26,8 @@
 
     <main>
 
-        <div class="card">
+        <!-- Province Screen -->
+        <section id="provinceScreen" class="card">
 
             <h2>Select Province</h2>
 
@@ -39,7 +40,25 @@
 
             <div id="provinceList"></div>
 
-        </div>
+        </section>
+
+        <!-- Municipality Screen -->
+        <section id="municipalityScreen" class="card" style="display:none;">
+
+            <button id="backProvince">← Back</button>
+
+            <h2 id="selectedProvince"></h2>
+
+            <input
+                type="text"
+                id="municipalitySearch"
+                placeholder="Search municipality..."
+                autocomplete="off"
+            >
+
+            <div id="municipalityList"></div>
+
+        </section>
 
     </main>
 
