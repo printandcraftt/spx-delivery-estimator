@@ -9,30 +9,39 @@
 </head>
 <body>
 
-<div class="container">
+<div class="app">
 
-    <div class="header">
-        <h1>📦 SPX Delivery Estimator</h1>
-        <p>Estimate SPX delivery from</p>
+    <header class="header">
+        <div class="logo">📦</div>
 
-        <div class="origin">
-            📍 Monkayo, Davao de Oro
+        <h1>SPX Delivery Estimator</h1>
+
+        <p>Estimate SPX Delivery Anywhere in the Philippines</p>
+
+        <div class="origin-card">
+            <span>📍 Origin</span>
+            <strong>Monkayo, Davao de Oro</strong>
         </div>
-    </div>
+    </header>
 
-    <div class="search-card">
+    <main>
 
-        <label>Search Province</label>
+        <div class="card">
 
-        <input
-            type="text"
-            id="provinceSearch"
-            placeholder="Type province name..."
-        >
+            <h2>Select Province</h2>
 
-        <div id="provinceList"></div>
+            <input
+                type="text"
+                id="provinceSearch"
+                placeholder="Search province..."
+                autocomplete="off"
+            >
 
-    </div>
+            <div id="provinceList"></div>
+
+        </div>
+
+    </main>
 
 </div>
 
