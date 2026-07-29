@@ -6,94 +6,160 @@
 }
 
 body{
-    background:#f4f7fb;
+    background:#eef3f9;
     min-height:100vh;
 }
 
-.container{
+.app{
+    width:100%;
     max-width:450px;
     margin:auto;
-    padding:20px;
+    padding:20px 15px 40px;
 }
 
 .header{
-    background:linear-gradient(135deg,#0066ff,#00aaff);
-    color:white;
+    background:linear-gradient(135deg,#0066ff,#00a2ff);
+    color:#fff;
+    border-radius:25px;
     padding:30px 20px;
-    border-radius:20px;
     text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.logo{
+    width:70px;
+    height:70px;
+    margin:auto;
+    background:rgba(255,255,255,.2);
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:34px;
+    margin-bottom:15px;
 }
 
 .header h1{
-    font-size:28px;
-    margin-bottom:10px;
+    font-size:30px;
+    margin-bottom:8px;
 }
 
 .header p{
     opacity:.9;
+    font-size:15px;
+    line-height:1.5;
 }
 
-.origin{
-    margin-top:18px;
-    background:rgba(255,255,255,.2);
-    padding:12px;
-    border-radius:12px;
-    font-weight:bold;
+.origin-card{
+    margin-top:22px;
+    background:rgba(255,255,255,.18);
+    border-radius:18px;
+    padding:16px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
 }
 
-.search-card{
-    background:white;
+.origin-card span{
+    font-size:13px;
+    opacity:.9;
+}
+
+.origin-card strong{
+    font-size:18px;
+}
+
+.card{
     margin-top:25px;
-    border-radius:20px;
-    padding:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    background:#fff;
+    border-radius:22px;
+    padding:22px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
 
-.search-card label{
-    display:block;
-    font-weight:bold;
-    margin-bottom:10px;
+.card h2{
+    font-size:22px;
+    margin-bottom:18px;
+    color:#222;
 }
 
-.search-card input{
+#provinceSearch{
     width:100%;
-    padding:14px;
-    border:2px solid #d9d9d9;
-    border-radius:12px;
+    padding:15px 18px;
+    border:2px solid #d9e2ef;
+    border-radius:14px;
     outline:none;
     font-size:16px;
-    transition:.3s;
+    transition:.25s;
 }
 
-.search-card input:focus{
-    border-color:#007bff;
+#provinceSearch:focus{
+    border-color:#0077ff;
 }
 
 #provinceList{
-    margin-top:15px;
+    margin-top:20px;
 }
 
 .province-item{
-    padding:14px;
-    border-radius:12px;
+    padding:16px 18px;
+    border-radius:14px;
     cursor:pointer;
     transition:.2s;
-    margin-bottom:8px;
+    border:1px solid transparent;
+    margin-bottom:10px;
+    font-size:16px;
+    font-weight:600;
 }
 
 .province-item:hover{
-    background:#eef5ff;
+    background:#edf5ff;
+    border-color:#b6d5ff;
+}
+
+.province-item:active{
+    transform:scale(.98);
 }
 
 @media(max-width:480px){
 
-.container{
+.app{
     padding:15px;
 }
 
+.header{
+    padding:25px 18px;
+}
+
+.logo{
+    width:60px;
+    height:60px;
+    font-size:28px;
+}
+
 .header h1{
-    font-size:24px;
+    font-size:25px;
+}
+
+.origin-card strong{
+    font-size:16px;
+}
+
+.card{
+    padding:18px;
+}
+
+.card h2{
+    font-size:20px;
+}
+
+#provinceSearch{
+    font-size:15px;
+}
+
+.province-item{
+    padding:15px;
+    font-size:15px;
 }
 
 }
